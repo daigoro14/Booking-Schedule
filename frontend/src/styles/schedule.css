@@ -1,3 +1,143 @@
-h1 {
-    background-color: red;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.scheduleRemote {
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 0 8px 7px 8px;
+}
+
+.colorInstruction {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    right: 0;
+}
+
+.colorInstruction span {
+    margin-right: 3px;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.freeExample {
+    margin-right: 12px;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: rgb(100, 255, 147);
+    border: 1px solid black;
+}
+
+.bookedExample {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: rgb(255, 100, 100);
+    border: 1px solid black;
+}
+
+.scheduleRemote h3 {
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+
+.schedule{
+    display: flex;
+    align-items: flex-end;
+}
+
+.availableTime{
+    transition: 0.3s;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    width: calc(100% - 1px);
+}
+
+.bookingInfo {
+    background-color: rgba(127, 221, 255, 0.092);
+    display: none;
+    height: 37px;
+    width: calc(100% + 1px);
+    border: 1px solid rgba(128, 128, 128, 0.291);
+    border-radius: 3px;
+    top: -40px;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    left: -2px;
+
+}
+
+.free {
+    background-color: rgb(100, 255, 147);
+    border: 1px solid rgb(52, 174, 52);
+}
+
+
+.free:hover {
+    background-color: rgb(90, 217, 128);
+    border: 1px solid rgb(38, 117, 38);
+}
+
+.free:hover .bookingInfo {
+    display: block;
+}
+
+.booked {
+    background-color: rgb(255, 100, 100);
+    border: 1px solid rgb(174, 52, 52);
+}
+
+.booked:hover {
+    height: 120px;
+    background-color: rgb(216, 91, 91);
+    border: 1px solid rgb(145, 44, 44);
+}
+
+.booked:hover .bookingInfo {
+    display: block;
+}
+
+table {
+    font-family: sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+td{
+    position: relative; 
+}
+
+th{
+    width: 140px;
+}
+
+td, th {
+border: 1px solid #dddddd;
+text-align: center;
+height: 37px;
+padding: 0;
+}
+
+tr{
+    background-color: white;
+}
+  
+tr:nth-child(even) {
+background-color: rgb(243, 243, 243);
 }
