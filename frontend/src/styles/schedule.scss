@@ -1,3 +1,13 @@
+@mixin freeColor{
+    background-color: rgb(100, 255, 147);
+    border: 1px solid rgb(52, 174, 52);
+}
+
+@mixin bookedColor{
+    background-color: rgb(255, 100, 100);
+    border: 1px solid rgb(174, 52, 52);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -44,8 +54,7 @@ body{
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background-color: rgb(100, 255, 147);
-    border: 1px solid rgb(52, 174, 52);
+    @include freeColor();
 }
 
 .bookedExample {
@@ -53,8 +62,7 @@ body{
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background-color: rgb(255, 100, 100);
-    border: 1px solid rgb(174, 52, 52);
+    @include bookedColor();
 }
 
 .scheduleRemote h3 {
@@ -90,8 +98,7 @@ body{
 }
 
 .free {
-    background-color: rgb(100, 255, 147);
-    border: 1px solid rgb(52, 174, 52);
+    @include freeColor();
 }
 
 
