@@ -1,7 +1,7 @@
 const bookingData = [
     {
         availability: "free",
-        week: 18,
+        week: 20,
         day: "tuesday",
         startTime: {
             "hour": 8,
@@ -14,7 +14,7 @@ const bookingData = [
     },
 
     {
-        availability: "free",
+        availability: "booked",
         week: 20,
         day: "friday",
         startTime: {
@@ -29,7 +29,7 @@ const bookingData = [
     
     {
         availability: "booked",
-        week: 19,
+        week: 21,
         day: "monday",
         startTime: {
             "hour": 10,

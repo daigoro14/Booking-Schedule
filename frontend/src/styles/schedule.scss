@@ -1,3 +1,7 @@
+$darkHighlight: #5e445e;
+
+$lightHightlight: #cfcfcf;
+
 @mixin freeColor{
     background-color: rgb(100, 255, 147);
     border: 1px solid rgb(52, 174, 52);
@@ -8,9 +12,26 @@
     border: 1px solid rgb(174, 52, 52);
 }
 
+@mixin availableExample{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+}
+
+
 body{
     margin: 0;
     padding: 0;
+}
+
+
+.light{
+    fill: $lightHightlight;
+}
+
+.dark {
+    fill: $darkHighlight;
 }
 
 .content{
@@ -50,18 +71,12 @@ body{
 
 .freeExample {
     margin-right: 12px;
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
+    @include availableExample();
     @include freeColor();
 }
 
 .bookedExample {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
+    @include availableExample();
     @include bookedColor();
 }
 
@@ -94,17 +109,14 @@ body{
     backdrop-filter: blur(10px);
     position: absolute;
     left: -2px;
-
 }
 
 .free {
     @include freeColor();
 }
 
-
 .free:hover {
-    background-color: rgb(90, 217, 128);
-    border: 1px solid rgb(38, 117, 38);
+    background-color: rgba(90, 217, 128, 0.411);
 }
 
 .free:hover .bookingInfo {
@@ -112,14 +124,12 @@ body{
 }
 
 .booked {
-    background-color: rgb(255, 100, 100);
-    border: 1px solid rgb(174, 52, 52);
+    @include bookedColor();
 }
 
 .booked:hover {
     height: 120px;
-    background-color: rgb(216, 91, 91);
-    border: 1px solid rgb(145, 44, 44);
+    background-color: rgba(216, 91, 91, 0.452);
 }
 
 .booked:hover .bookingInfo {
@@ -130,7 +140,7 @@ table {
     font-family: sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
 td{
     position: relative; 
@@ -141,16 +151,103 @@ th{
 }
 
 td, th {
-border: 1px solid #dddddd;
 text-align: center;
 height: 37px;
 padding: 0;
 }
 
-tr{
+.light tr{
     background-color: white;
 }
-  
-tr:nth-child(even) {
-background-color: rgb(243, 243, 243);
+
+.light tr:nth-child(even) {
+    background-color: rgb(243, 243, 243);
 }
+
+.light td, th {
+    border: 1px solid $lightHightlight;
+}
+
+.dark tr{
+    background-color: #1e0e1e;
+}
+
+.dark tr:nth-child(even) {
+    background-color: #401a40;
+}
+
+.dark td, .dark th {
+    border: 1px solid $darkHighlight;
+}
+
+
+// SLIDE
+.switchDiv {
+    position: absolute;
+    right: 0;
+    margin: 14px 18px 0 0;
+    display: flex;
+    height: 35px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 27px;
+    margin: 0 3px 0 3px;
+}
+  
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(245, 209, 49);
+    background-image: linear-gradient( to right, rgb(255, 230, 0), rgba(96, 13, 204, 0.62));
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:hover {
+    background-color: #000000;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: rgb(60, 28, 219);
+  }
+
+  input:checked + .slider:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
